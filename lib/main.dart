@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:untitled55/screen/screen1.dart';
+import 'package:untitled55/screen/screen2.dart';
+import 'package:untitled55/screen/screen3.dart';
+
+
+
+
+
 
 main(){
   runApp(MaterialApp(
@@ -14,6 +22,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -120,6 +130,7 @@ class _MyAppState extends State<MyApp> {
 
     return
        Container(
+
          height: 300,
 
          decoration: BoxDecoration(
@@ -135,15 +146,55 @@ class _MyAppState extends State<MyApp> {
            
            child:Container(
 
-             child: Text(text,style: TextStyle(fontSize: 23,color: Colors.white,fontWeight: FontWeight.bold,shadows: [
-              Shadow(
-                blurRadius: 5.0,
-                color: Colors.black,
-                offset: Offset(4.0, 3.0)
-              )
-             ]),textAlign: TextAlign.center,),
+             child: Column(
+
+               children: <Widget>[
+               Center(
+
+                 child: RaisedButton(color: Colors.purpleAccent.shade100,shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),onPressed: (){
+                   if(image=='assets/images/kr2.gif'){
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(builder: (context) => FirstRoute()),
+                     );
+
+
+                   }else if(image=='assets/images/kar4.gif'){
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(builder: (context) => SecondRoute()),
+                     );
+
+
+                   }else if (image=='assets/images/kar3.gif'){
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(builder: (context) => ThirdRoute()),
+                     );
+
+                   }
+
+
+
+
+
+
+
+
+                  },child: Text(text,style: TextStyle(fontSize: 23,color: Colors.white,fontWeight: FontWeight.bold,shadows: [
+                   Shadow(
+                       blurRadius: 5.0,
+                       color: Colors.black,
+                       offset: Offset(4.0, 3.0)
+                   )
+                 ]),textAlign: TextAlign.center,),),
+               ),
+
+               ],
+             ),
              decoration: BoxDecoration(
-               
+
+
                borderRadius: BorderRadius.all(Radius.circular(26.0)),border: Border.all(color: Colors.black,width:5),
                color: Colors.redAccent,
                image: DecorationImage(image: AssetImage(image),fit: BoxFit.cover)
@@ -159,5 +210,6 @@ class _MyAppState extends State<MyApp> {
 
 
 }
+
 
 /////
